@@ -79,7 +79,7 @@ const Contact = () => {
             Get In <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Touch</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to elevate your digital compliance? Let's discuss how we can help secure and optimize your operations.
+            Ready to elevate your digital compliance? Let&apos;s discuss how we can help secure and optimize your operations.
           </p>
         </motion.div>
 
@@ -204,7 +204,7 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                We're here to help you navigate the complex world of digital compliance. 
+                We&apos;re here to help you navigate the complex world of digital compliance. 
                 Reach out to discuss your specific requirements and learn how we can support your organization.
               </p>
             </div>

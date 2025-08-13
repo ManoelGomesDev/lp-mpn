@@ -82,7 +82,7 @@ const About = () => {
           viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
         >
-          {stats.map((stat, index) => (
+          {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <stat.icon className="w-8 h-8 text-primary-600" />
