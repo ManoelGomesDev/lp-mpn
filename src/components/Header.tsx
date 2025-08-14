@@ -16,6 +16,24 @@ const Header = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsMenuOpen(false); // Fechar menu mobile se estiver aberto
+    
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const headerHeight = 80; // Altura aproximada do header
+      const targetPosition = targetElement.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <>
       {/* Mobile Menu Overlay */}
@@ -42,7 +60,7 @@ const Header = () => {
                 alt="Logo" 
                 width={120} 
                 height={80} 
-                className="h-10 w-auto sm:h-12 md:h-14 lg:h-16" 
+                className="h-6 w-auto sm:h-8 md:h-9 lg:h-10" 
               />
             </div>
 
@@ -52,7 +70,8 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200"
+                onClick={(e) => handleSmoothScroll(e, item.href)}
+                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 cursor-pointer"
               >
                 {item.name}
               </a>
@@ -123,8 +142,8 @@ const Header = () => {
                       delay: 0.1 + index * 0.1,
                       ease: 'easeInOut'
                     }}
-                    className="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-gray-50 font-medium rounded-lg transition-colors duration-200"
-                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-gray-50 font-medium rounded-lg transition-colors duration-200 cursor-pointer"
+                    onClick={(e) => handleSmoothScroll(e, item.href)}
                   >
                     {item.name}
                   </motion.a>

@@ -4,6 +4,20 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Shield, Zap } from 'lucide-react';
 
 const Hero = () => {
+  const handleSmoothScroll = (targetId: string) => {
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const headerHeight = 80; // Altura aproximada do header
+      const targetPosition = targetElement.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-secondary-50 overflow-hidden pt-16 sm:pt-0">
       {/* Background Elements */}
@@ -44,11 +58,17 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4"
             >
-              <button className="group w-full sm:w-auto bg-primary-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-primary-700 transition-all duration-200 flex items-center justify-center">
+              <button 
+                onClick={() => handleSmoothScroll('contact')}
+                className="group w-full sm:w-auto bg-primary-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-primary-700 transition-all duration-200 flex items-center justify-center cursor-pointer"
+              >
                 Start Your Consultation
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:border-primary-600 hover:text-primary-600 transition-colors duration-200">
+              <button 
+                onClick={() => handleSmoothScroll('services')}
+                className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:border-primary-600 hover:text-primary-600 transition-colors duration-200 cursor-pointer"
+              >
                 View Our Services
               </button>
             </motion.div>

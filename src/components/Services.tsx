@@ -13,6 +13,20 @@ import {
 } from 'lucide-react';
 
 const Services = () => {
+  const handleSmoothScroll = (targetId: string) => {
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const headerHeight = 80; // Altura aproximada do header
+      const targetPosition = targetElement.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const recurringServices = [
     {
       icon: Shield,
@@ -189,7 +203,10 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mt-12 sm:mt-16 px-4"
         >
-          <button className="w-full sm:w-auto bg-primary-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-primary-700 transition-colors duration-200 inline-flex items-center justify-center">
+          <button 
+            onClick={() => handleSmoothScroll('contact')}
+            className="w-full sm:w-auto bg-primary-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-primary-700 transition-colors duration-200 inline-flex items-center justify-center cursor-pointer"
+          >
             Discuss Your Requirements
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
           </button>
