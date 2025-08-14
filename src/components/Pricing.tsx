@@ -7,8 +7,6 @@ const Pricing = () => {
   const pricingTiers = [
     {
       name: 'Essential Compliance',
-      price: '5,000',
-      period: 'per month',
       description: 'Perfect for growing companies needing core compliance coverage',
       features: [
         'DPO as a Service (LGPD/GDPR)',
@@ -21,8 +19,6 @@ const Pricing = () => {
     },
     {
       name: 'Premium Full-Service',
-      price: '12,000',
-      period: 'per month',
       description: 'Comprehensive solution for enterprises with complex requirements',
       features: [
         'All Essential features',
@@ -37,8 +33,6 @@ const Pricing = () => {
     },
     {
       name: 'Enterprise Global',
-      price: 'Custom',
-      period: 'tailored pricing',
       description: 'Bespoke solutions for multinational corporations',
       features: [
         'All Premium features',
@@ -56,38 +50,35 @@ const Pricing = () => {
   const projectPricing = [
     {
       service: 'Digital Compliance Implementation',
-      priceRange: '30,000 - 150,000',
       timeline: '3-6 months',
       description: 'Complete setup of policies, processes, and technical controls'
     },
     {
       service: 'Technical & Legal Audits',
-      priceRange: '30,000 - 150,000',
       timeline: '4-8 weeks',
       description: 'Comprehensive due diligence for M&A and investments'
     },
     {
       service: 'Executive Training Programs',
-      priceRange: '5,000 - 20,000',
       timeline: '1-2 weeks',
       description: 'Customized C-Level governance and compliance education'
     }
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section id="pricing" className="pt-20 pb-16 sm:pt-24 sm:pb-20 md:pt-28 md:pb-24 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Transparent <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Pricing</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
+            Our <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Plans</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
             Choose the right level of support for your organization. All plans include our premium service standards.
           </p>
         </motion.div>
@@ -101,11 +92,11 @@ const Pricing = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Recurring Services</h3>
-            <p className="text-lg text-gray-600">Monthly subscriptions with 24-month strategic retainers available</p>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Service Plans</h3>
+            <p className="text-lg text-gray-600">Flexible subscription plans with 24-month strategic retainers available</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {pricingTiers.map((tier, index) => (
               <motion.div
                 key={tier.name}
@@ -131,17 +122,6 @@ const Pricing = () => {
                 <div className="text-center mb-8">
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">{tier.name}</h4>
                   <p className="text-gray-600 mb-4">{tier.description}</p>
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-4xl font-bold text-gray-900">
-                      {tier.price === 'Custom' ? tier.price : `$${tier.price}`}
-                    </span>
-                    {tier.price !== 'Custom' && (
-                      <span className="text-gray-600 ml-2">USD/{tier.period}</span>
-                    )}
-                  </div>
-                  {tier.price === 'Custom' && (
-                    <span className="text-gray-600">{tier.period}</span>
-                  )}
                 </div>
 
                 <ul className="space-y-4 mb-8">
@@ -160,7 +140,7 @@ const Pricing = () => {
                       : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                   }`}
                 >
-                  {tier.price === 'Custom' ? 'Contact Sales' : 'Get Started'}
+                  {tier.name === 'Enterprise Global' ? 'Contact Sales' : 'Get Started'}
                 </button>
               </motion.div>
             ))}
@@ -195,10 +175,6 @@ const Pricing = () => {
                 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-700 font-medium">Investment:</span>
-                    <span className="text-lg font-bold text-primary-600">USD {project.priceRange}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
                     <span className="text-gray-700 font-medium">Timeline:</span>
                     <span className="text-gray-900 font-semibold">{project.timeline}</span>
                   </div>
@@ -223,11 +199,11 @@ const Pricing = () => {
         >
           <h4 className="text-2xl font-bold text-gray-900 mb-4">Strategic Retainer Agreements</h4>
           <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
-            Lock in current pricing with our 24-month strategic retainer agreements. 
-            Includes annual price protection and priority access to new services.
+            Partner with us through our 24-month strategic retainer agreements. 
+            Includes priority access to new services and dedicated account management.
           </p>
           <button className="bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-200">
-            Discuss Retainer Options
+            Discuss Partnership Options
           </button>
         </motion.div>
       </div>
