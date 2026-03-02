@@ -8,8 +8,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "MPN Consulting - Digital & Crypto-Regulatory Consultancy in Dubai",
+  title: "MPUPPE",
   description: "Premium full-service consultancy integrating digital law, compliance, AI governance, cybersecurity and crypto regulation for global enterprises.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
