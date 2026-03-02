@@ -9,7 +9,10 @@ const Footer = () => {
     'Cybersecurity as a Service',
     'KYC/KYW as a Service',
     'Digital Compliance Implementation',
-    'Technical & Legal Audits'
+    'Technical & Legal Audits',
+    'Executive Training Programs',
+    'Strategic Consulting',
+    'Other'
   ];
 
   const company = [
@@ -47,21 +50,24 @@ const Footer = () => {
             </div>
             
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Premium digital compliance consultancy serving global enterprises with 
-              integrated legal, technical, and regulatory expertise from our Dubai headquarters.
+              Premium full-service consultancy integrating digital law, compliance and AI governance for global enterprises.
             </p>
 
             <div className="space-y-3">
-              <div className="flex items-center text-gray-300">
-                <MapPin className="w-5 h-5 mr-3 text-primary-400" />
-                <span>DIFC, Dubai, UAE</span>
+              <div className="flex items-start text-gray-300">
+                <MapPin className="w-5 h-5 mr-3 mt-0.5 text-primary-400 flex-shrink-0" />
+                <span className="whitespace-pre-line text-sm">
+                  Dubai: Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, UAE
+                  {'\n'}
+                  São Paulo: Rua Doutora Neyde Apparecida Sollitto 130, cobertura, Consolação, São Paulo, Brazil
+                </span>
               </div>
               <div className="flex items-center text-gray-300">
-                <Mail className="w-5 h-5 mr-3 text-primary-400" />
-                <span>hello@mpnconsulting.ae</span>
+                <Mail className="w-5 h-5 mr-3 text-primary-400 flex-shrink-0" />
+                <span>sales@mpuppe.com</span>
               </div>
               <div className="flex items-center text-gray-300">
-                <Phone className="w-5 h-5 mr-3 text-primary-400" />
+                <Phone className="w-5 h-5 mr-3 text-primary-400 flex-shrink-0" />
                 <span>+971 4 XXX XXXX</span>
               </div>
             </div>
@@ -135,7 +141,7 @@ const Footer = () => {
             <div className="text-center md:text-right">
               <h4 className="text-lg font-semibold mb-4">Global Reach</h4>
               <p className="text-gray-300 text-sm">
-                Serving clients across 15+ countries with local expertise and international standards
+                Based in Dubai • Offices in São Paulo • Regulatory excellence for global enterprises
               </p>
             </div>
           </div>
@@ -144,13 +150,15 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2024 MPN Consulting. All rights reserved.
+            © {new Date().getFullYear()} MPN Consulting. All rights reserved.
           </div>
           
-          <div className="flex items-center space-x-6 text-sm text-gray-400">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm text-gray-400">
             <span>Partnership with MPUPPE</span>
             <span>•</span>
             <span>Dubai, UAE</span>
+            <span>•</span>
+            <span>São Paulo, Brazil</span>
             <span>•</span>
             <span>Global Operations</span>
           </div>
@@ -159,7 +167,7 @@ const Footer = () => {
         {/* Disclaimer */}
         <div className="mt-8 p-4 bg-gray-800 rounded-lg">
           <p className="text-xs text-gray-400 leading-relaxed">
-            <strong>Disclaimer:</strong> MPN Consulting provides professional services in partnership with licensed legal practitioners. 
+            <strong>Disclaimer:</strong> MPN Consulting provides full-service regulatory and compliance consultancy in partnership with licensed legal practitioners. 
             This website does not constitute legal advice. Specific legal matters should be discussed with qualified legal counsel. 
             All services are subject to applicable local laws and regulations.
           </p>

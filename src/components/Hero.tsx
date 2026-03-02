@@ -40,15 +40,13 @@ const Hero = () => {
               </div>
               
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2">
-                <span className="block">Digital & Crypto</span>
                 <span className="block bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                  Regulatory Excellence
+                  Digital Regulatory Excellence
                 </span>
               </h1>
               
               <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-2">
-                Premium full-service consultancy integrating digital law, compliance, AI governance, 
-                cybersecurity and crypto regulation for global enterprises.
+                Premium full-service consultancy integrating digital law, compliance and AI governance for global enterprises.
               </p>
             </motion.div>
 
@@ -74,7 +72,7 @@ const Hero = () => {
             </motion.div>
 
                       {/* Key Features */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -103,7 +101,7 @@ const Hero = () => {
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 text-center">Global Expertise</h3>
                 <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed">LGPD, GDPR, UAE Data Protection Law compliance</p>
               </div>
-            </motion.div>
+            </motion.div> */}
         </div>
       </div>
     </section>

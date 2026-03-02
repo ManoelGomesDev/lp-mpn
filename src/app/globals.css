@@ -4,7 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   
-  /* Brand Colors from Logo */
+  /* Brand Colors - paleta anterior (azul/teal) */
   --primary-50: #e6f4f7;
   --primary-100: #b3dde6;
   --primary-200: #80c6d5;
@@ -68,4 +68,24 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }

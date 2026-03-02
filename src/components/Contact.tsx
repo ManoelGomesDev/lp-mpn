@@ -30,7 +30,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'hello@mpnconsulting.ae',
+      details: 'sales@mpuppe.com',
       subtitle: 'We respond within 24 hours'
     },
     {
@@ -42,7 +42,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: 'DIFC, Dubai, UAE',
+      details: 'Dubai: Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates\n\nSão Paulo: Rua Doutora Neyde Apparecida Sollitto 130, cobertura, Consolação, São Paulo, Brazil',
       subtitle: 'By appointment only'
     },
     {
@@ -223,14 +223,16 @@ const Contact = () => {
                     <info.icon className="w-6 h-6 text-primary-600" />
                   </div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h4>
-                  <p className="text-gray-900 font-medium mb-1">{info.details}</p>
+                  <p className="text-gray-900 font-medium mb-1 whitespace-pre-line">{info.details}</p>
                   <p className="text-sm text-gray-600">{info.subtitle}</p>
                 </motion.div>
               ))}
             </div>
 
-            {/* Quick Actions */}
-            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-8 rounded-2xl">
+         
+          </motion.div>
+             {/* Quick Actions */}
+             <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-8 rounded-2xl">
               <h4 className="text-xl font-bold text-gray-900 mb-4">Need Immediate Assistance?</h4>
               <p className="text-gray-700 mb-6">
                 For urgent compliance matters or security incidents, our emergency response team is available 24/7.
@@ -263,7 +265,6 @@ const Contact = () => {
                 </li>
               </ul>
             </div>
-          </motion.div>
         </div>
       </div>
     </section>

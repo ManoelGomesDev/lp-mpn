@@ -2,6 +2,20 @@
 
 import { motion } from 'framer-motion';
 import { Globe, Users, Award, MapPin, Building, Zap } from 'lucide-react';
+import Conjur from '../../public/conjur.png';
+import CorreioBrasilience from '../../public/correiobrazilience.png';
+import Poder360 from '../../public/poder360.png';
+import Aeromot from '../../public/logos/Aeromot.png';
+import inter from "../../public/logos/inter.png";
+import bosch from '../../public/logos/bosch.png';
+import criaai from '../../public/logos/criaai.webp';
+import dg from '../../public/logos/dg.png';
+import green from '../../public/logos/green.png';
+import mercedes from '../../public/logos/mercedes.png';
+import shell from '../../public/logos/shell.png';
+import spotify from '../../public/logos/spotify.png';
+import Image from 'next/image';
+
 
 const About = () => {
   const stats = [
@@ -32,6 +46,49 @@ const About = () => {
     }
   ];
 
+  const partners = [
+    {
+      partner: Aeromot,
+    },
+    {
+      partner: inter,
+    },
+    {
+      partner: bosch,
+    },
+    {
+      partner: criaai,
+    },
+    {
+      partner: dg,
+    },
+    {
+      partner: green,
+    },
+    {
+      partner: mercedes,
+    },
+    {
+      partner: shell,
+    },
+    {
+      partner: spotify,
+    }
+  ];
+
+  const mediaRecognition = [
+    {
+      media: Conjur,
+    },
+    {
+      media: CorreioBrasilience,
+      
+    },
+    {
+      media: Poder360,
+    }
+  ];
+
   const expertise = [
     {
       area: 'Digital Law & Compliance',
@@ -43,16 +100,16 @@ const About = () => {
       description: 'AI Act (EU), DIFC guidelines, NIST framework implementation',
       icon: Award
     },
-    {
-      area: 'Cybersecurity Operations',
-      description: 'SOC monitoring, incident response, digital forensics',
-      icon: Zap
-    },
-    {
-      area: 'Crypto Regulation',
-      description: 'Blockchain analytics, KYC/KYW, structured operations',
-      icon: Globe
-    }
+    // {
+    //   area: 'Cybersecurity Operations',
+    //   description: 'SOC monitoring, incident response, digital forensics',
+    //   icon: Zap
+    // },
+    // {
+    //   area: 'Crypto Regulation',
+    //   description: 'Blockchain analytics, KYC/KYW, structured operations',
+    //   icon: Globe
+    // }
   ];
 
   return (
@@ -66,11 +123,10 @@ const About = () => {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
-            About <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">MPN Consulting</span>
+            About <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">MPuppe Consulting</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
-            We are a premium consultancy that bridges the gap between legal expertise and technical execution, 
-            providing comprehensive digital compliance solutions for the modern global economy.
+          We are a premium consultancy that bridges the gap between legal expertise and technical execution, providing comprehensive digital compliance solutions for the modern global economy.
           </p>
         </motion.div>
 
@@ -93,7 +149,81 @@ const About = () => {
           ))}
         </motion.div>
 
-        {/* Our Approach */}
+        {/* Trusted by Industry Leaders */}
+        <div className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Trusted by Industry Leaders</h3>
+            <div className="overflow-hidden w-full">
+              <div className="flex gap-12 py-4 animate-marquee items-center">
+                {[...partners, ...partners].map((partner, index) => (
+                  <div key={index} className="flex-shrink-0 flex items-center justify-center">
+                    <Image
+                      src={partner.partner}
+                      alt="Partner"
+                      width={140}
+                      height={140}
+                      className="w-[140px] h-[140px] object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {expertise.map((item, index) => (
+              <motion.div
+                key={item.area}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-6 h-6 text-secondary-600" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-3">{item.area}</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+              </motion.div>
+            ))}
+          </div> */}
+        </div>
+
+               {/* Media Recognition */}
+        <div className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Media Recognition</h3>
+          
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {mediaRecognition.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-4 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+              >
+                <Image src={item.media} alt="Media Recognition" width={320} height={320} className="w-full max-w-[320px] h-auto object-contain mx-auto" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
         <div className="mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,7 +239,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {expertise.map((item, index) => (
               <motion.div
                 key={item.area}
@@ -130,7 +260,7 @@ const About = () => {
         </div>
 
         {/* Global Presence */}
-        <div>
+        {/* <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -172,10 +302,10 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Partnership */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -195,7 +325,7 @@ const About = () => {
               View Case Studies
             </button>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

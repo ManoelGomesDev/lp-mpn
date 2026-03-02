@@ -1,20 +1,53 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import logo from '../../public/02.png';
+import logo from '../../public/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   const navigation = [
     { name: 'Services', href: '#services' },
-    { name: 'Pricing', href: '#pricing' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  const sectionRatiosRef = useRef<Record<string, number>>({});
+
+  useEffect(() => {
+    const sectionIds = ['services', 'about', 'contact'];
+
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        const id = (entry.target as HTMLElement).id;
+        if (sectionIds.includes(id)) {
+          sectionRatiosRef.current[id] = entry.intersectionRatio;
+        }
+      });
+
+      const leading = Object.entries(sectionRatiosRef.current).reduce(
+        (best, [id, ratio]) => (ratio > best.ratio ? { id, ratio } : best),
+        { id: '', ratio: 0 }
+      );
+      if (leading.id) setActiveSection(leading.id);
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+      rootMargin: '-80px 0px -50% 0px',
+      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+    });
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -66,19 +99,24 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={(e) => handleSmoothScroll(e, item.href)}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 cursor-pointer"
-              >
-                {item.name}
-              </a>
-            ))}
-            <button className="bg-primary-600 text-white px-4 py-2 md:px-6 md:py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200 text-sm md:text-base">
-              Get Started
-            </button>
+            {navigation.map((item) => {
+              const sectionId = item.href.replace('#', '');
+              const isActive = activeSection === sectionId;
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleSmoothScroll(e, item.href)}
+                  className={`font-medium transition-colors duration-200 cursor-pointer border-b-2 border-transparent ${
+                    isActive
+                      ? 'text-primary-600 border-primary-600'
+                      : 'text-gray-700 hover:text-primary-600'
+                  }`}
+                >
+                  {item.name}
+                </a>
+              );
+            })}
           </div>
 
           {/* Mobile menu button */}
@@ -130,39 +168,32 @@ const Header = () => {
                 transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.1 }}
                 className="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-100 shadow-lg"
               >
-                {navigation.map((item, index) => (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: 0.1 + index * 0.1,
-                      ease: 'easeInOut'
-                    }}
-                    className="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-gray-50 font-medium rounded-lg transition-colors duration-200 cursor-pointer"
-                    onClick={(e) => handleSmoothScroll(e, item.href)}
-                  >
-                    {item.name}
-                  </motion.a>
-                ))}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{
-                    duration: 0.3,
-                    delay: 0.1 + navigation.length * 0.1,
-                    ease: 'easeInOut'
-                  }}
-                  className="pt-2"
-                >
-                  <button className="w-full bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200">
-                    Get Started
-                  </button>
-                </motion.div>
+                {navigation.map((item, index) => {
+                  const sectionId = item.href.replace('#', '');
+                  const isActive = activeSection === sectionId;
+                  return (
+                    <motion.a
+                      key={item.name}
+                      href={item.href}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: 0.1 + index * 0.1,
+                        ease: 'easeInOut'
+                      }}
+                      className={`block px-4 py-3 font-medium rounded-lg transition-colors duration-200 cursor-pointer ${
+                        isActive
+                          ? 'text-primary-600 bg-primary-50'
+                          : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                      }`}
+                      onClick={(e) => handleSmoothScroll(e, item.href)}
+                    >
+                      {item.name}
+                    </motion.a>
+                  );
+                })}
               </motion.div>
             </motion.div>
           )}

@@ -50,28 +50,28 @@ const Services = () => {
         'Risk mitigation strategies'
       ]
     },
-    {
-      icon: Lock,
-      title: 'Cybersecurity as a Service',
-      description: 'Comprehensive security operations and incident response',
-      features: [
-        'SOC monitoring & vulnerability management',
-        'Periodic penetration testing',
-        'Digital forensics & incident response',
-        'Business continuity planning'
-      ]
-    },
-    {
-      icon: Search,
-      title: 'KYC/KYW as a Service',
-      description: 'Identity verification and wallet screening outsourcing',
-      features: [
-        'Chainalysis & Elliptic integration',
-        'Continuous due diligence monitoring',
-        'Compliance reporting for exchanges',
-        'API integration & automation'
-      ]
-    }
+    // {
+    //   icon: Lock,
+    //   title: 'Cybersecurity as a Service',
+    //   description: 'Comprehensive security operations and incident response',
+    //   features: [
+    //     'SOC monitoring & vulnerability management',
+    //     'Periodic penetration testing',
+    //     'Digital forensics & incident response',
+    //     'Business continuity planning'
+    //   ]
+    // },
+    // {
+    //   icon: Search,
+    //   title: 'KYC/KYW as a Service',
+    //   description: 'Identity verification and wallet screening outsourcing',
+    //   features: [
+    //     'Chainalysis & Elliptic integration',
+    //     'Continuous due diligence monitoring',
+    //     'Compliance reporting for exchanges',
+    //     'API integration & automation'
+    //   ]
+    // }
   ];
 
   const projectServices = [
