@@ -231,40 +231,9 @@ const Contact = () => {
 
          
           </motion.div>
-             {/* Quick Actions */}
-             <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-8 rounded-2xl">
-              <h4 className="text-xl font-bold text-gray-900 mb-4">Need Immediate Assistance?</h4>
-              <p className="text-gray-700 mb-6">
-                For urgent compliance matters or security incidents, our emergency response team is available 24/7.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-200">
-                  Emergency Hotline
-                </button>
-                <button className="border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 hover:text-white transition-colors duration-200">
-                  Schedule Consultation
-                </button>
-              </div>
-            </div>
+      
 
-            {/* Compliance Guarantee */}
-            <div className="bg-white p-6 rounded-xl border-2 border-secondary-200">
-              <h4 className="text-lg font-bold text-gray-900 mb-3">Our Commitment</h4>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-secondary-500 rounded-full mr-3"></div>
-                  Response within 24 hours
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-secondary-500 rounded-full mr-3"></div>
-                  Confidential consultation
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-secondary-500 rounded-full mr-3"></div>
-                  No obligation assessment
-                </li>
-              </ul>
-            </div>
+
         </div>
       </div>
     </section>
