@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "MPUPPE",
-  description: "Premium full-service consultancy integrating digital law, compliance, AI governance, cybersecurity and crypto regulation for global enterprises.",
+  description: "Premium full-service consultancy in regulatory excellence: digital law, compliance and AI governance for global enterprises.",
   icons: {
     icon: "/icon.png",
   },
