@@ -166,9 +166,9 @@ const About = () => {
                     <Image
                       src={partner.partner}
                       alt="Partner"
-                      width={140}
-                      height={140}
-                      className="w-[140px] h-[140px] object-contain"
+                      width={80}
+                      height={80}
+                      className="w-[80px] h-[80px] object-contain"
                     />
                   </div>
                 ))}
