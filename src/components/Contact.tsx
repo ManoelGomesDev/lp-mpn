@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
+import { Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -34,12 +34,6 @@ const Contact = () => {
       subtitle: 'We respond within 24 hours'
     },
     {
-      icon: Phone,
-      title: 'Call Us',
-      details: '+971 4 XXX XXXX',
-      subtitle: 'Dubai office hours'
-    },
-    {
       icon: MapPin,
       title: 'Visit Us',
       details: 'Dubai: Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates\n\nSão Paulo: Rua Doutora Neyde Apparecida Sollitto 130, cobertura, Consolação, São Paulo, Brazil',
@@ -56,8 +50,6 @@ const Contact = () => {
   const services = [
     'DPO as a Service',
     'Chief AI Officer as a Service',
-    'Cybersecurity as a Service',
-    'KYC/KYW as a Service',
     'Digital Compliance Implementation',
     'Technical & Legal Audits',
     'Executive Training Programs',
